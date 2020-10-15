@@ -3,7 +3,7 @@ let svg = null;
 let worldmeta = null; //地图
 let data = null; //数据
 let myscale=[-1000,0,5,10,50,100,300,1000];
-let color = ["#fff","#f35","#ffd32a","#4bcffa","#ffa801","#05c46b","#44a","#40739e"];
+let color = ["#E9AF1F","#E8921B","#E4751B","#E25819","#DE3A17","#DC1C17","#DA0116","#000"];
 let compute = d3.scaleOrdinal()
     		.domain(myscale)
     		.range(color);
@@ -65,10 +65,10 @@ function showdata() {
         .call(zoom);
     let tip = d3.tip().attr('class', 'd3-tip').html(function (d) {
         return `
-        <table class="table" style="background-color: rgba(175, 172, 13, 0.37);">
+        <table class="table" style="background-color: rgba(200, 200, 200, 0.37);">
 	<thead>
 		<tr>
-			<th>位置</th>
+			<th>place</th>
 			<th>${d["place"]}</th>
 
 		</tr>
@@ -76,11 +76,11 @@ function showdata() {
 	<tbody>
 	
 		<tr  class="danger">
-			<td>深度</td>
+			<td>depth</td>
 			<td>${d["depth"]}</td>
         </tr>
         <tr  class="danger">
-			<td>时间</td>
+			<td>time</td>
 			<td>${d["time"]}</td>
 		</tr>
 	</tbody>
@@ -102,7 +102,7 @@ function showdata() {
         .enter().append('path')
         .attr('d', pathGenerator)
         .attr('stroke', 'black')
-        .attr("fill", "#999")
+        .attr("fill", "#B0B6C2")
         .attr('stroke-width', 0.5)
         .attr("opacity", .6)
         .on('mouseover', function (d) {
@@ -251,8 +251,8 @@ function showdata() {
         .attr('fill', "black");
 
         svg.append('text')
-        .text("过去30天地震数据")
-        .attr('x', width - 150)
+        .text("Earthquakes in the past 30 days")
+        .attr('x', width - 250)
         .attr('y', 20)
         .attr('fill', "black");
 
