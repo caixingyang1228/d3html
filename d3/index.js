@@ -33,8 +33,8 @@ window.addEventListener("load", async function () { //同步
 });
 
 async function getdata() {
-    let map = await d3.json("/d3/countries-50m.json");
-    data = await d3.csv("/d3/all_month.csv");
+    let map = await d3.json("./d3/countries-50m.json");
+    data = await d3.csv("./d3/all_month.csv");
     worldmeta = topojson.feature(map, map.objects.countries);
     console.log(worldmeta.features);
     console.log(data);
